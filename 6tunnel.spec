@@ -6,8 +6,9 @@ Version:	0.10
 Release:	1
 License:	GPL
 Group:		Networking/Utilities
-Source0:	ftp://bzium.eu.org/pub/%{name}-%{version}.tar.gz
+Source0:	http://toxygen.net/6tunnel/%{name}-%{version}.tar.gz
 # Source0-md5:	574d65554a7792079e25f9fae833e9fa
+URL:		http://toxygen.net/6tunnel/
 # probably not needed, but used if found, so BR or BC is needed
 # to force stable build environment
 # (should be disabled in configure if not needed)
