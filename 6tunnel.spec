@@ -2,12 +2,12 @@
 Summary:	Simple tunneling for applications that don't speak IPv6
 Summary(pl):	Proste narzêdzie do tunelowania
 Name:		6tunnel
-Version:	0.10
-Release:	2
+Version:	0.11rc1
+Release:	1
 License:	GPL
 Group:		Networking/Utilities
 Source0:	http://toxygen.net/6tunnel/%{name}-%{version}.tar.gz
-# Source0-md5:	574d65554a7792079e25f9fae833e9fa
+# Source0-md5:	b325fa9d238e32195fbb3fc3646b0d28
 URL:		http://toxygen.net/6tunnel/
 # probably not needed, but used if found, so BR or BC is needed
 # to force stable build environment
@@ -28,7 +28,7 @@ poprzez IPv6 z aplikacji, która nie wspiera IPv6 mo¿esz u¿yæ tego
 narzêdzia. Np. `6tunnel 6668 irc6.net 6667'.
 
 %prep
-%setup -q
+%setup -q -n %{name}-0.11
 
 %build
 %{__autoconf}
