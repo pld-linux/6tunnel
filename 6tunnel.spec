@@ -4,7 +4,7 @@ Release:	1
 Group:		Networking/Utilities
 Group(pl):	Sieciowe/Narzêdzia
 License:	GPL
-BuildRoot:	/tmp/%{name}-%{version}-root
+BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 Source0:	ftp://bzium.eu.org/pub/%{name}-%{version}.tar.gz
 Summary:	Simple tunneling for applications that don't speak IPv6.
 Summary(pl):	Proste narzêdzie do tunelowania.
