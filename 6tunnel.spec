@@ -5,6 +5,7 @@ Version:	0.09
 Release:	1
 License:	GPL
 Group:		Networking/Utilities
+#Source0-md5:	cd430e156f30369e13927e1abadcca58
 Source0:	ftp://bzium.eu.org/pub/%{name}-%{version}.tar.gz
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
