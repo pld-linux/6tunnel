@@ -1,10 +1,11 @@
 Summary:	Simple tunneling for applications that don't speak IPv6
 Summary(pl):	Proste narzêdzie do tunelowania
 Name:		6tunnel
-Version:	0.04
+Version:	0.06
 Release:	1
 License:	GPL
 Group:		Networking/Utilities
+Group(de):	Netzwerkwesen/Werkzeuge
 Group(pl):	Sieciowe/Narzêdzia
 Source0:	ftp://bzium.eu.org/pub/%{name}-%{version}.tar.gz
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
@@ -30,10 +31,8 @@ narzêdzia. Np. `6tunnel 6668 irc6.net 6667'.
 rm -rf $RPM_BUILD_ROOT
 install -d $RPM_BUILD_ROOT{%{_bindir},%{_mandir}/man1}
 
-install -s 6tunnel $RPM_BUILD_ROOT%{_bindir}
-install 6tunnel.1  $RPM_BUILD_ROOT%{_mandir}/man1
-
-gzip -9nf $RPM_BUILD_ROOT%{_mandir}/man*/*
+install 6tunnel		$RPM_BUILD_ROOT%{_bindir}
+install 6tunnel.1	$RPM_BUILD_ROOT%{_mandir}/man1
 
 %clean
 rm -rf $RPM_BUILD_ROOT
