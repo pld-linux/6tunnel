@@ -1,13 +1,13 @@
+Summary:	Simple tunneling for applications that don't speak IPv6
+Summary(pl):	Proste narzêdzie do tunelowania
 Name:		6tunnel
 Version:	0.04
 Release:	1
+License:	GPL
 Group:		Networking/Utilities
 Group(pl):	Sieciowe/Narzêdzia
-License:	GPL
-BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 Source0:	ftp://bzium.eu.org/pub/%{name}-%{version}.tar.gz
-Summary:	Simple tunneling for applications that don't speak IPv6.
-Summary(pl):	Proste narzêdzie do tunelowania.
+BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
 If you want to access some services that are avaiable only for IPv6 hosts
@@ -27,11 +27,12 @@ make CC="gcc $RPM_OPT_FLAGS -Wall"
 
 %install
 rm -rf $RPM_BUILD_ROOT
+install -d $RPM_BUILD_ROOT{%{_bindir},%{_mandir}/man1}
 
-install -d         $RPM_BUILD_ROOT{%{_bindir},%{_mandir}/man1}
 install -s 6tunnel $RPM_BUILD_ROOT%{_bindir}
 install 6tunnel.1  $RPM_BUILD_ROOT%{_mandir}/man1
-gzip -9nf	   $RPM_BUILD_ROOT%{_mandir}/man*/*
+
+gzip -9nf $RPM_BUILD_ROOT%{_mandir}/man*/*
 
 %clean
 rm -rf $RPM_BUILD_ROOT
@@ -39,4 +40,4 @@ rm -rf $RPM_BUILD_ROOT
 %files
 %defattr(644,root,root,755)
 %attr(755,root,root) %{_bindir}/6tunnel
-%{_mandir}/man1/6tunnel.*
+%{_mandir}/man1/*
