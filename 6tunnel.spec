@@ -11,6 +11,7 @@ Source0:	ftp://bzium.eu.org/pub/%{name}-%{version}.tar.gz
 # probably not needed, but used if found, so BR or BC is needed
 # to force stable build environment
 # (should be disabled in configure if not needed)
+BuildRequires:	autoconf
 BuildRequires:	libinet6
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
