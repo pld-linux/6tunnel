@@ -1,7 +1,7 @@
 Summary:	Simple tunneling for applications that don't speak IPv6
 Summary(pl):	Proste narzêdzie do tunelowania
 Name:		6tunnel
-Version:	0.07
+Version:	0.09
 Release:	1
 License:	GPL
 Group:		Networking/Utilities
@@ -40,4 +40,4 @@ rm -rf $RPM_BUILD_ROOT
 %files
 %defattr(644,root,root,755)
 %attr(755,root,root) %{_bindir}/6tunnel
-%{_mandir}/man1/*
+%{_mandir}/man?/*
