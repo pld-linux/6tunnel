@@ -1,12 +1,12 @@
 Summary:	Simple tunneling for applications that don't speak IPv6
 Summary(pl):	Proste narzêdzie do tunelowania
 Name:		6tunnel
-Version:	0.09
+Version:	0.10
 Release:	1
 License:	GPL
 Group:		Networking/Utilities
-#Source0-md5:	cd430e156f30369e13927e1abadcca58
 Source0:	ftp://bzium.eu.org/pub/%{name}-%{version}.tar.gz
+# Source0-md5:	574d65554a7792079e25f9fae833e9fa
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
@@ -21,9 +21,11 @@ poprzez IPv6 z aplikacji, która nie wspiera IPv6 mo¿esz u¿yæ tego
 narzêdzia. Np. `6tunnel 6668 irc6.net 6667'.
 
 %prep
-%setup -q -n %{name}
+%setup -q
 
 %build
+%{__autoconf}
+%configure
 %{__make} CC="gcc %{rpmcflags} -Wall"
 
 %install
@@ -38,5 +40,6 @@ rm -rf $RPM_BUILD_ROOT
 
 %files
 %defattr(644,root,root,755)
+%doc ChangeLog contrib/cron.sh
 %attr(755,root,root) %{_bindir}/6tunnel
 %{_mandir}/man?/*
