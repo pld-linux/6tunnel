@@ -25,14 +25,14 @@ narzêdzia. Np. `6tunnel 6668 irc6.net 6667'.
 %setup -q -n %{name}
 
 %build
-%{__make} CC="gcc $RPM_OPT_FLAGS -Wall"
+%{__make} CC="gcc %{!?debug:$RPM_OPT_FLAGS}%{?debug:-O -g} -Wall"
 
 %install
 rm -rf $RPM_BUILD_ROOT
 install -d $RPM_BUILD_ROOT{%{_bindir},%{_mandir}/man1}
 
-install 6tunnel		$RPM_BUILD_ROOT%{_bindir}
-install 6tunnel.1	$RPM_BUILD_ROOT%{_mandir}/man1
+install 6tunnel $RPM_BUILD_ROOT%{_bindir}
+install 6tunnel.1 $RPM_BUILD_ROOT%{_mandir}/man1
 
 %clean
 rm -rf $RPM_BUILD_ROOT
