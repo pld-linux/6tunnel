@@ -2,11 +2,11 @@
 Summary:	Simple tunneling for applications that don't speak IPv6
 Summary(pl):	Proste narzêdzie do tunelowania
 Name:		6tunnel
-Version:	0.11rc1
-Release:	1
+Version:	0.11
+Release:	0.rc1
 License:	GPL
 Group:		Networking/Utilities
-Source0:	http://toxygen.net/6tunnel/%{name}-%{version}.tar.gz
+Source0:	http://toxygen.net/6tunnel/%{name}-%{version}rc1.tar.gz
 # Source0-md5:	b325fa9d238e32195fbb3fc3646b0d28
 URL:		http://toxygen.net/6tunnel/
 # probably not needed, but used if found, so BR or BC is needed
