@@ -10,9 +10,10 @@ Source0:	ftp://bzium.eu.org/pub/%{name}-%{version}.tar.gz
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
-If you want to access some services that are avaiable only for IPv6 hosts
-and the application doesn't support it or you have no time to play with
-patches, use this tool. Simple `6tunnel 6668 irc6.net 6667' will do :)
+If you want to access some services that are avaiable only for IPv6
+hosts and the application doesn't support it or you have no time to
+play with patches, use this tool. Simple `6tunnel 6668 irc6.net 6667'
+will do :)
 
 %description -l pl
 Je¶li chcesz uzyskaæ dostêp do niektórych us³ug, dostêpnych wy³±cznie
