@@ -24,7 +24,7 @@ narzêdzia. Np. `6tunnel 6668 irc6.net 6667'.
 %setup -q -n %{name}
 
 %build
-make CC="gcc $RPM_OPT_FLAGS -Wall"
+%{__make} CC="gcc $RPM_OPT_FLAGS -Wall"
 
 %install
 rm -rf $RPM_BUILD_ROOT
