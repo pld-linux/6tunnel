@@ -28,8 +28,7 @@ make CC="gcc $RPM_OPT_FLAGS -Wall"
 %install
 rm -rf $RPM_BUILD_ROOT
 
-install -d $RPM_BUILD_ROOT%{_bindir}
-install -d $RPM_BUILD_ROOT%{_mandir}/man1
+install -d         $RPM_BUILD_ROOT{%{_bindir},%{_mandir}/man1}
 install -s 6tunnel $RPM_BUILD_ROOT%{_bindir}
 install 6tunnel.1  $RPM_BUILD_ROOT%{_mandir}/man1
 gzip -9nf	   $RPM_BUILD_ROOT%{_mandir}/man*/*
@@ -39,5 +38,5 @@ rm -rf $RPM_BUILD_ROOT
 
 %files
 %defattr(644,root,root,755)
-%{_bindir}/6tunnel
+%attr(755,root,root) %{_bindir}/6tunnel
 %{_mandir}/man1/6tunnel.*
