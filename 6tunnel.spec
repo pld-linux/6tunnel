@@ -1,3 +1,4 @@
+# TODO: decide to use libinet6 or not
 Summary:	Simple tunneling for applications that don't speak IPv6
 Summary(pl):	Proste narzêdzie do tunelowania
 Name:		6tunnel
@@ -7,6 +8,10 @@ License:	GPL
 Group:		Networking/Utilities
 Source0:	ftp://bzium.eu.org/pub/%{name}-%{version}.tar.gz
 # Source0-md5:	574d65554a7792079e25f9fae833e9fa
+# probably not needed, but used if found, so BR or BC is needed
+# to force stable build environment
+# (should be disabled in configure if not needed)
+BuildRequires:	libinet6
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
@@ -26,7 +31,7 @@ narzêdzia. Np. `6tunnel 6668 irc6.net 6667'.
 %build
 %{__autoconf}
 %configure
-%{__make} CC="gcc %{rpmcflags} -Wall"
+%{__make}
 
 %install
 rm -rf $RPM_BUILD_ROOT
