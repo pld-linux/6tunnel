@@ -1,6 +1,6 @@
 # TODO: decide to use libinet6 or not
 Summary:	Simple tunneling for applications that don't speak IPv6
-Summary(pl):	Proste narzêdzie do tunelowania
+Summary(pl.UTF-8):   Proste narzÄ™dzie do tunelowania
 Name:		6tunnel
 Version:	0.11
 %define		_rc	rc1
@@ -23,10 +23,10 @@ hosts and the application doesn't support it or you have no time to
 play with patches, use this tool. Simple `6tunnel 6668 irc6.net 6667'
 will do :)
 
-%description -l pl
-Je¶li chcesz uzyskaæ dostêp do niektórych us³ug, dostêpnych wy³±cznie
-poprzez IPv6 z aplikacji, która nie wspiera IPv6 mo¿esz u¿yæ tego
-narzêdzia. Np. `6tunnel 6668 irc6.net 6667'.
+%description -l pl.UTF-8
+JeÅ›li chcesz uzyskaÄ‡ dostÄ™p do niektÃ³rych usÅ‚ug, dostÄ™pnych wyÅ‚Ä…cznie
+poprzez IPv6 z aplikacji, ktÃ³ra nie wspiera IPv6 moÅ¼esz uÅ¼yÄ‡ tego
+narzÄ™dzia. Np. `6tunnel 6668 irc6.net 6667'.
 
 %prep
 %setup -q -n %{name}-0.11
