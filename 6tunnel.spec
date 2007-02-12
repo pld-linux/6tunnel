@@ -1,6 +1,6 @@
 # TODO: decide to use libinet6 or not
 Summary:	Simple tunneling for applications that don't speak IPv6
-Summary(pl.UTF-8):   Proste narzędzie do tunelowania
+Summary(pl.UTF-8):	Proste narzędzie do tunelowania
 Name:		6tunnel
 Version:	0.11
 %define		_rc	rc1
