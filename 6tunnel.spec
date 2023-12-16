@@ -1,20 +1,14 @@
-# TODO: decide to use libinet6 or not
 Summary:	Simple tunneling for applications that don't speak IPv6
 Summary(pl.UTF-8):	Proste narzędzie do tunelowania
 Name:		6tunnel
-Version:	0.11
-%define		_rc	rc1
-Release:	0.%{_rc}.1
-License:	GPL
+Version:	0.13
+Release:	1
+License:	GPL v2
 Group:		Networking/Utilities
-Source0:	http://toxygen.net/6tunnel/%{name}-%{version}%{_rc}.tar.gz
-# Source0-md5:	b325fa9d238e32195fbb3fc3646b0d28
-URL:		http://toxygen.net/6tunnel/
-# probably not needed, but used if found, so BR or BC is needed
-# to force stable build environment
-# (should be disabled in configure if not needed)
-BuildRequires:	autoconf
-BuildRequires:	libinet6
+#Source0Download: https://github.com/wojtekka/6tunnel/releases
+Source0:	https://github.com/wojtekka/6tunnel/releases/download/%{version}/%{name}-%{version}.tar.gz
+# Source0-md5:	b13ba5ad8efc5d74b2dd71c2df85ef35
+URL:		https://github.com/wojtekka/6tunnel
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
@@ -24,30 +18,31 @@ play with patches, use this tool. Simple `6tunnel 6668 irc6.net 6667'
 will do :)
 
 %description -l pl.UTF-8
-Jeśli chcesz uzyskać dostęp do niektórych usług, dostępnych wyłącznie
-poprzez IPv6 z aplikacji, która nie wspiera IPv6 możesz użyć tego
-narzędzia. Np. `6tunnel 6668 irc6.net 6667'.
+Teog narzędzia można użyć, aby uzyskać dostęp do niektórych usług,
+dostępnych wyłącznie poprzez IPv6, z aplikacji, która nie obsługuje
+IPv6 - np. `6tunnel 6668 irc6.net 6667'.
 
 %prep
-%setup -q -n %{name}-0.11
+%setup -q
 
 %build
-%{__autoconf}
-%configure
+%configure \
+	ac_cv_lib_inet6_main=no \
+	ac_cv_lib_nsl_t_accept=no \
+	ac_cv_lib_socket_socket=no
 %{__make}
 
 %install
 rm -rf $RPM_BUILD_ROOT
-install -d $RPM_BUILD_ROOT{%{_bindir},%{_mandir}/man1}
 
-install 6tunnel		$RPM_BUILD_ROOT%{_bindir}
-install 6tunnel.1	$RPM_BUILD_ROOT%{_mandir}/man1
+%{__make} install \
+	DESTDIR=$RPM_BUILD_ROOT
 
 %clean
 rm -rf $RPM_BUILD_ROOT
 
 %files
 %defattr(644,root,root,755)
-%doc ChangeLog contrib/cron.sh
+%doc ChangeLog TODO
 %attr(755,root,root) %{_bindir}/6tunnel
-%{_mandir}/man?/*
+%{_mandir}/man1/6tunnel.1*
