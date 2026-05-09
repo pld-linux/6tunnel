@@ -1,13 +1,13 @@
 Summary:	Simple tunneling for applications that don't speak IPv6
 Summary(pl.UTF-8):	Proste narzędzie do tunelowania
 Name:		6tunnel
-Version:	0.13
+Version:	0.14
 Release:	1
 License:	GPL v2
 Group:		Networking/Utilities
 #Source0Download: https://github.com/wojtekka/6tunnel/releases
 Source0:	https://github.com/wojtekka/6tunnel/releases/download/%{version}/%{name}-%{version}.tar.gz
-# Source0-md5:	b13ba5ad8efc5d74b2dd71c2df85ef35
+# Source0-md5:	20a86dbd158b330817f3105818c7fca0
 URL:		https://github.com/wojtekka/6tunnel
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
